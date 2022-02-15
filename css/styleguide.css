@@ -1,4 +1,4 @@
-:root { 
+/* :root { 
   --coconut: #fefeff;
   --cold-purple: #af9dd4;
   --cold-purple-2: #b09cd5;
@@ -26,7 +26,7 @@
   --font-family-proximanova-light: "ProximaNova-Light", Helvetica;
   --font-family-proximanova-regular: "ProximaNova-Regular", Helvetica;
   --font-family-proximanova-semibold: "ProximaNova-Semibold", Helvetica;
-}
+} */
 .proximanova-black-white-72px {
   color: var(--white);
   font-family: var(--font-family-proximanova-black);

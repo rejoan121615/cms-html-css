@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// import fonts
+@font-face {
+    font-family: "ProximaNova-Black";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/ProximaNova-Black.otf") format("opentype");
+}
+@font-face {
+    font-family: "ProximaNova-Semibold";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/.173.otf") format("opentype");
+}
+@font-face {
+    font-family: "ProximaNova-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/.5474.otf") format("opentype");
+}
+@font-face {
+    font-family: "ProximaNova-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/Mark Simonson - Proxima Nova A.otf") format("opentype");
+}
+
+// root style
+:root {
+    --coconut: #fefeff;
+    --cold-purple: #af9dd4;
+    --cold-purple-2: #b09cd5;
+    --concord: #7b7b7b;
+    --eden: #08584d;
+    --fuscous-gray: #515453;
+    --fuscous-gray-2: #51545367;
+    --gigas: #563695;
+    --gigas-2: #553594;
+    --purple-mountains-majesty: #9984c2;
+    --purple-mountains-majesty-2: #9983c2;
+    --royal-purple: #6648a3;
+    --royal-purple-2: #6647a3;
+    --white: #ffffff;
+    --font-size-l: 46px;
+    --font-size-m: 28px;
+    --font-size-s: 18px;
+    --font-size-xl: 50px;
+    --font-size-xs: 14px;
+    --font-size-xxl: 53px;
+    --font-size-xxxl: 72px;
+    --font-family-proximanova-black: "ProximaNova-Black", Helvetica;
+    --font-family-proximanova-light: "ProximaNova-Light", Helvetica;
+    --font-family-proximanova-regular: "ProximaNova-Regular", Helvetica;
+    --font-family-proximanova-semibold: "ProximaNova-Semibold", Helvetica;
+}
+
+// color
+$title: #08584d;
+
+// break points
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$mxl: 1800px;
+
+// list
+$container-max-widths: (
+    $sm: 540px,
+    $md: 720px,
+    $lg: 960px,
+    $xl: 1140px,
+    $xxl: 1320px,
+    $mxl: 1720px,
+);
+
+// mixing
+@mixin resp($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin respMax($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin font($val) {
+    font-size: $val;
+    line-height: $val;
+}
+
+// container style
+@each $screen, $max-width in $container-max-widths {
+    .container {
+        @include resp($screen) {
+            max-width: $max-width;
+        }
+    }
+}
+
+section {
+    width: 100%;
+}
+
+.para {
+    color: var(--eden);
+    font-family: var(--font-family-proximanova-semibold);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    @include resp($sm) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.btn__wrap {
+    text-align: left;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--eden);
+    border-radius: 10px;
+    padding: 8px 16px;
+    color: white;
+    font-family: var(--font-family-proximanova-semibold);
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    @include resp(400) {
+        font-size: 16px;
+    }
+    @include resp($sm) {
+        @include font(17px);
+        padding: 15px 20px;
+    }
+    @include resp($xl) {
+        padding: 19px 25px;
+    }
+
+    @include resp($xxl) {
+        padding: 25px 30px;
+    }
+
+    @include resp($mxl) {
+        padding: 30px 36px;
+        font-size: 28px;
+    }
+}
+
+// header style
+#head__shoulders {
+    background: transparent url(../img/hero-bg@1x.png) no-repeat center center;
+    background-size: 100% 100%;
+    @include resp($md) {
+        background-image: url(../img/hero-bg-4@1x.png);
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    .container {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        @include resp(400px) {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            width: 88%;
+        }
+        @include resp($sm) {
+            width: 100%;
+            max-width: 340px;
+            padding: 32px 0px;
+        }
+        @include resp($md) {
+            padding: 45px 0px;
+        }
+        @include resp($xl) {
+            max-width: 560px;
+            padding: 75px 0px;
+        }
+        @include resp(1366px) {
+            max-width: 600px;
+            padding: 85px 0px;
+        }
+        @include resp(1440px) {
+            max-width: 635px;
+            padding: 90px 0px;
+        }
+        @include resp($mxl) {
+            max-width: 840px;
+            padding: 112px 0px;
+        }
+        // text s
+        .texts {
+            .title {
+                margin-bottom: 7px;
+                @include resp(400px) {
+                    margin-bottom: 10px;
+                }
+                @include resp($md) {
+                    margin-bottom: 25px;
+                }
+                @include resp($xl) {
+                    margin-bottom: 40px;
+                }
+                h1 {
+                    color: $title;
+                    font-family: var(--font-family-proximanova-black);
+                    font-size: 28px;
+                    font-weight: 900;
+                    letter-spacing: 0;
+                    @include resp(400px) {
+                        font-size: 32px;
+                        line-height: 32px;
+                    }
+                    @include resp($xl) {
+                        font-size: 46px;
+                        line-height: 46px;
+                    }
+                    @include resp($xxl) {
+                        font-size: var(--font-size-xl);
+                        line-height: var(--font-size-xl);
+                    }
+                    @include resp($mxl) {
+                        @include font(var(--font-size-xxxl));
+                    }
+                }
+            }
+            // details
+            .details {
+                @extend .para;
+                align-self: flex-end;
+                font-size: 10px;
+                margin-bottom: 14px;
+                @include resp(400px) {
+                    margin-bottom: 18px;
+                    font-size: 13px;
+                }
+                @include resp($sm) {
+                    margin-bottom: 25px;
+                }
+                @include resp($xl) {
+                    margin-bottom: 40px;
+                    @include font(var(--font-size-s));
+                }
+                @include resp($mxl) {
+                    margin-bottom: 45px;
+                }
+            }
+        }
+    }
+    // element row
+    .element-row {
+        display: none;
+        width: 100%;
+        margin-top: 70px;
+        @include resp($md) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .overlap-group {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            img {
+                display: inline-block;
+                width: auto;
+                height: 63px;
+                @include resp($xl) {
+                    height: 93px;
+                }
+            }
+            .bottom_text {
+                width: auto;
+                padding: 7px 10px;
+                width: 100%;
+                @include resp($xl) {
+                    padding: 12px 10px;
+                }
+                // background color
+                &:nth-child(1) {
+                    background-color: var(---gigas-2);
+                }
+                p {
+                    color: var(--white);
+                    font-family: var(--font-family-proximanova-light);
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    text-align: center;
+                    @include resp ($lg) {
+                        font-size: 15px;
+                    } 
+                    @include resp ($xl) {
+                        font-size: 17.5px;
+                    }
+                    @include resp($xxl) {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            // background color
+            &:nth-child(1) {
+                img {
+                    @include resp ($xl) {
+                        width: 93px;
+                    }
+                }
+                // background color
+                .bottom_text {
+                    background-color: var(--gigas-2);
+                }
+            }
+            &:nth-child(2) {
+                img {
+                    @include resp($xl) {
+                        height: 104px;
+                    }
+                }
+                // background color
+                .bottom_text {
+                    background-color: var(--royal-purple-2);
+                }
+            }
+            &:nth-child(3) {
+                img {
+                    @include resp ($xl) {
+                        width: 93px;
+                    }
+                }
+                // background color
+                .bottom_text {
+                    background-color: var(--purple-mountains-majesty-2);
+                    padding: 10px 0px;
+                    @include resp($xl) {
+                        padding: 15px 0px;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                img {
+                    @include resp($xl) {
+                        height: 104px;
+                    }
+                }
+                // background color
+                .bottom_text {
+                    background-color: var(--cold-purple-2);
+                }
+            }
+        }
+    }
+}
