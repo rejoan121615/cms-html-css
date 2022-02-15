@@ -427,7 +427,7 @@ section {
             @include resp($xxl) {
                 font-size: 23px;
                 line-height: 28px;
-                max-width: 725px;
+                max-width: 770px;
             }
             @include resp($mxl) {
                 font-size: 34px;
@@ -467,8 +467,157 @@ section {
     }
 }
 
-// video section
+// product list
+#products {
+    .product__wrap {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        max-width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+        @include padX(25px);
+        @include resp($md) {
+            max-width: 590px;
+            @include padX(50px);
+        }
+        @include resp($xl) {
+            max-width: 930px;
+            @include padX(96px);
+        }
+        @include resp($xxl) {
+            max-width: 1060px;
+            @include padX(105px);
+        }
+        @include resp($mxl) {
+            max-width: 1480px;
+            @include padX(125px);
+        }
+        .product__img {
+            width: auto;
+            height: 125px;
+            margin-right: 25px;
+            @include resp(400px) {
+                margin-right: 35px;
+            }
+            @include resp(768px) {
+                height: 244px;
+                margin-right: 60px;
+            }
+            @include resp($xl) {
+                height: 405px;
+                margin-right: 90px;
+            }
+            @include resp($xxl) {
+                height: 433px;
+                margin-right: 120px;
+            }
+            @include resp($mxl) {
+                height: 610px;
+                margin-right: 175px;
+            }
+        }
+        .details {
+            h2 {
+                margin-bottom: 3px;
+            }
+            h2,
+            p {
+                color: var(--white);
+                font-family: var(--font-family-proximanova-black);
+                font-size: 12px;
 
+                font-style: normal;
+                font-weight: 900;
+                text-transform: capitalize;
+                @include resp(400px) {
+                    font-size: 14px;
+                }
+                @include resp($md) {
+                    font-size: 28px;
+                }
+                @include resp($xl) {
+                    font-size: 46px;
+                }
+                @include resp($xxl) {
+                    font-size: 50px;
+                }
+                @include resp($mxl) {
+                    font-size: 72px;
+                }
+            }
+            .items {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                transform: translateX(-18px);
+                @include resp($md) {
+                    transform: translate(-38px);
+                }
+                @include resp($xl) {
+                    transform: translateX(-76px);
+                }
+                @include resp($mxl) {
+                    transform: translateX(-95px);
+                }
+                img {
+                    width: 13px;
+                    height: 24px;
+                    margin-right: 5px;
+                    @include resp($md) {
+                        width: 27px;
+                        height: initial;
+                        margin-right: 10px;
+                    }
+                    @include resp($xl) {
+                        width: 48px;
+                        margin-top: 3px;
+                        margin-right: 15px;
+                    }
+                    @include resp($xxl) {
+                        width: 50px;
+                        margin-top: 5px;
+                        margin-right: 25px;
+                    }
+                    @include resp($mxl) {
+                        width: 74px;
+                    }
+                }
+                p {
+                    font-family: var(--font-family-proximanova-regular);
+                    font-style: normal;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .hinged__knee {
+        background: transparent url("../product-img/hinged-knee-bg.png")
+            no-repeat center center;
+        background-size: 100% 100%;
+    }
+
+    .oa__wrap {
+        background: transparent url("../product-img/oa-wrap-bg.png")
+            no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .oa__ {
+        background: transparent url("../product-img/oa+-bg.png")
+            no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .rom__knee {
+        background: transparent url("../product-img/rom-knee-bg.png")
+            no-repeat center center;
+        background-size: 100% 100%;
+    }
+}
+
+// empty div
 #empty__div {
     background-color: var(--fuscous-gray-2);
     .container {
