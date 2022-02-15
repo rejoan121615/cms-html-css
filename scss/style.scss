@@ -278,12 +278,27 @@ section {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
         }
+        @include resp($xl) {
+            margin-top: 116px;
+        }
+        @include resp ($xxl) {
+            margin-top: 145px;
+        }
+        @include resp($mxl) {
+            margin-top: 191px;
+        }
         .overlap-group {
             display: flex;
             flex-flow: column wrap;
             justify-content: space-between;
             align-items: center;
             height: 100px;
+            @include resp($xl) {
+                height: 165px;
+            }
+            @include resp ($mxl) {
+                height: 225px;
+            }
             img {
                 display: inline-block;
                 width: auto;
@@ -291,13 +306,19 @@ section {
                 @include resp($xl) {
                     height: 93px;
                 }
+                @include resp ($mxl) {
+                    height: 155px;
+                }
             }
             .bottom_text {
                 width: auto;
                 padding: 7px 10px;
                 width: 100%;
                 @include resp($xl) {
-                    padding: 12px 10px;
+                    padding: 14px 10px;
+                }
+                @include resp ($mxl) {
+                    padding: 18px 0px;
                 }
                 // background color
                 &:nth-child(1) {
@@ -318,7 +339,10 @@ section {
                         font-size: 17.5px;
                     }
                     @include resp($xxl) {
-                        font-size: 22px;
+                        font-size: 18px;
+                    }
+                    @include resp ($mxl) {
+                        font-size: 19px;
                     }
                 }
             }
@@ -327,7 +351,7 @@ section {
             &:nth-child(1) {
                 img {
                     @include resp($xl) {
-                        width: 93px;
+                        // width: 93px;
                     }
                 }
                 // background color
@@ -340,6 +364,12 @@ section {
                     @include resp($xl) {
                         height: 104px;
                     }
+                    @include resp($xl) {
+                        height: 110px;
+                    }
+                    @include resp ($mxl) {
+                        height: 155px;
+                    }
                 }
                 // background color
                 .bottom_text {
@@ -349,7 +379,7 @@ section {
             &:nth-child(3) {
                 img {
                     @include resp($xl) {
-                        width: 93px;
+                        // width: 93px;
                     }
                 }
                 // background color
@@ -357,7 +387,22 @@ section {
                     background-color: var(--purple-mountains-majesty-2);
                     padding: 10px 0px;
                     @include resp($xl) {
-                        padding: 15px 0px;
+                        padding: 16px 0px;
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                    @include resp($xxl) {
+                        padding: 16px 0px;
+                        p {
+                            font-size: 22px;
+                        }
+                    }
+                    @include resp ($mxl) {
+                        padding: 20px 0px;
+                        p {
+                            font-size: 24px;
+                        }
                     }
                 }
             }
@@ -365,6 +410,12 @@ section {
                 img {
                     @include resp($xl) {
                         height: 104px;
+                    }
+                    @include resp($xxl) {
+                        height: 110px;
+                    }
+                    @include resp($mxl) {
+                        height: 155px;
                     }
                 }
                 // background color
@@ -601,18 +652,18 @@ section {
     }
 
     .oa__wrap {
-        background: transparent url("../product-img/oa-wrap-bg.png")
-            no-repeat center center;
+        background: transparent url("../product-img/oa-wrap-bg.png") no-repeat
+            center center;
         background-size: 100% 100%;
     }
     .oa__ {
-        background: transparent url("../product-img/oa+-bg.png")
-            no-repeat center center;
+        background: transparent url("../product-img/oa+-bg.png") no-repeat
+            center center;
         background-size: 100% 100%;
     }
     .rom__knee {
-        background: transparent url("../product-img/rom-knee-bg.png")
-            no-repeat center center;
+        background: transparent url("../product-img/rom-knee-bg.png") no-repeat
+            center center;
         background-size: 100% 100%;
     }
 }
@@ -621,6 +672,9 @@ section {
 #empty__div {
     background-color: var(--fuscous-gray-2);
     .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 350px;
         @include resp($md) {
             height: 392px;
@@ -630,6 +684,30 @@ section {
         }
         @include resp($xxl) {
             height: 612px;
+        }
+        h1 {
+            color: var(--white);
+            font-family: var(--font-family-proximanova-black);
+            font-size: 12px;
+
+            font-style: normal;
+            font-weight: 900;
+            text-transform: capitalize;
+            @include resp(400px) {
+                font-size: 14px;
+            }
+            @include resp($md) {
+                font-size: 28px;
+            }
+            @include resp($xl) {
+                font-size: 46px;
+            }
+            @include resp($xxl) {
+                font-size: 50px;
+            }
+            @include resp($mxl) {
+                font-size: 72px;
+            }
         }
     }
 }
