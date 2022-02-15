@@ -457,12 +457,30 @@ section {
             @include resp($xl) {
                 height: 573px;
             }
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 height: 612px;
             }
             iframe {
                 // width: 100%;
             }
+        }
+    }
+}
+
+// video section
+
+#empty__div {
+    background-color: var(--fuscous-gray-2);
+    .container {
+        height: 350px;
+        @include resp($md) {
+            height: 392px;
+        }
+        @include resp($xl) {
+            height: 573px;
+        }
+        @include resp($xxl) {
+            height: 612px;
         }
     }
 }
